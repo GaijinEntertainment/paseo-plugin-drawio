@@ -32,7 +32,7 @@ are never loaded; such diagrams show a notice instead.
 - Managed installation prepares locked production dependencies, so Node.js and npm must be
   on the daemon's path, and then downloads the official ELK layout bundle (see below). A plugin
   installed from a local directory needs dependencies and ELK prepared manually; see the
-  [repository setup instructions](https://github.com/ivolnistov/paseo-plugin-drawio#install-from-github).
+  [repository setup instructions](https://github.com/GaijinEntertainment/paseo-plugin-drawio#install-from-github).
   Without dependencies, agents get no draw.io tools; without ELK, layout is skipped with a note
   while repair, normalization, label fitting and routing still run.
 - Rendering runs in the desktop app and in web browsers. iOS and Android clients show a notice

@@ -6,11 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivolnistov/paseo-plugin-drawio.git"
+    "url": "git+https://github.com/GaijinEntertainment/paseo-plugin-drawio.git"
   },
-  "homepage": "https://github.com/ivolnistov/paseo-plugin-drawio#readme",
+  "homepage": "https://github.com/GaijinEntertainment/paseo-plugin-drawio#readme",
   "bugs": {
-    "url": "https://github.com/ivolnistov/paseo-plugin-drawio/issues"
+    "url": "https://github.com/GaijinEntertainment/paseo-plugin-drawio/issues"
   },
   "files": [
     "paseo-plugin.json",

@@ -20,13 +20,13 @@ Paseo 0.15.0 or later on the daemon and client, with plugins enabled. Rendering 
 ## Install from GitHub
 
 ```sh
-paseo plugin add git:ivolnistov/paseo-plugin-drawio
+paseo plugin add git:GaijinEntertainment/paseo-plugin-drawio
 ```
 
 To install a specific release, pass its tag:
 
 ```sh
-paseo plugin add git:ivolnistov/paseo-plugin-drawio --ref v0.1.0
+paseo plugin add git:GaijinEntertainment/paseo-plugin-drawio --ref v0.1.0
 ```
 
 The Git installation installs locked production dependencies without dependency lifecycle scripts. It also attempts to download the pinned official ELK layout bundle from GitHub into a private user cache. A failed ELK download leaves layout unavailable; the other preparation steps remain usable.

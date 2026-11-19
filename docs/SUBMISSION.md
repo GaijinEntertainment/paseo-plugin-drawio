@@ -1,6 +1,6 @@
 ### Source
 
-https://github.com/ivolnistov/paseo-plugin-drawio
+https://github.com/GaijinEntertainment/paseo-plugin-drawio
 
 ### Categories
 

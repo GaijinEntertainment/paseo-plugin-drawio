@@ -1,6 +1,6 @@
 # Publication preparation
 
-This repository is prepared for Git-based distribution. It is not yet listed in the Paseo registry. The GitHub repository is currently private. No npm publication is required for this route; `private: true` in `package.json` deliberately prevents accidental npm publication.
+This public repository is distributed through Git. Release `v0.1.0` was accepted into the Paseo registry on 2026-11-06 as `ivolnistov/drawio`. The repository was transferred to `GaijinEntertainment` on 2026-11-19; migration of the catalog identity to `gaijinentertainment/drawio` requires registry review. No npm publication is required for this route; `private: true` in `package.json` deliberately prevents accidental npm publication.
 
 ## Release checks
 
@@ -22,7 +22,7 @@ Pushing a tag `vX.Y.Z` (or `vX.Y.Z-<prerelease>`) runs `.github/workflows/releas
 3. `npm pack --ignore-scripts` builds `paseo-plugin-drawio-X.Y.Z.tgz`, and `SHA256SUMS` records its checksum.
 4. `gh release create --verify-tag` publishes a GitHub Release with both files and fixed notes containing the tag install command. A version with a prerelease suffix is marked as a prerelease. Nothing is published to npm.
 
-The archive holds the plugin source, assets, licenses and the lock, without dependencies. Paseo installs from the Git tag (`paseo plugin add git:ivolnistov/paseo-plugin-drawio --ref vX.Y.Z`), not from the archive. Pushing a tag is a publication step and needs owner approval like the others above.
+The archive holds the plugin source, assets, licenses and the lock, without dependencies. Paseo installs from the Git tag (`paseo plugin add git:GaijinEntertainment/paseo-plugin-drawio --ref vX.Y.Z`), not from the archive. Pushing a tag is a publication step and needs owner approval like the others above.
 
 `npm-shrinkwrap.json` is the committed dependency lock for this repository; `npm ci` consumes it. There is no separate `package-lock.json`.
 
@@ -30,15 +30,15 @@ The screenshots and metadata are release materials, not a statement that registr
 
 ## GitHub destination
 
-Repository: <https://github.com/ivolnistov/paseo-plugin-drawio>
+Repository: <https://github.com/GaijinEntertainment/paseo-plugin-drawio>
 
-Proposed repository description:
+Repository description:
 
 > View draw.io diagrams in Paseo file tabs and agent replies, and give agents the official draw.io tools
 
-The public registry accepts public GitHub sources. Make this repository public only after the owner approves that change and the publication checks above have been addressed. Push the approved revision before submission. Registry reviewers pin the exact reviewed commit.
+The repository remains public after the transfer. Registry reviewers pin the exact reviewed commit.
 
-## Registry submission draft
+## Registry submissions
 
 Destination: <https://github.com/getpaseo/plugins/issues/new?template=submit-plugin.yml>
 
@@ -54,4 +54,12 @@ After submission, record the issue and generated review PR. Git updates require 
 - [Registry review policy](https://github.com/getpaseo/plugins/blob/main/REVIEW.md)
 - [Submission form](https://github.com/getpaseo/plugins/issues/new?template=submit-plugin.yml)
 
-Requirements checked on 2026-11-05. Registry review is separate from local tests and installation checks.
+Transfer and registry behavior checked on 2026-11-19. Registry review is separate from local tests and installation checks.
+
+## Ownership transfer
+
+The manifest ID remains `drawio`. GitHub redirects the former repository URL to the corporate repository; do not reuse the old repository location. Tags and releases retain their existing commits.
+
+Keep the existing `ivolnistov/drawio` registry record available during migration so installed copies can still resolve their pinned artifact. The proposed corporate catalog ID is `gaijinentertainment/drawio`. Existing registry installations track their original ID and do not automatically switch to another ID. If a registry pin changes its Git remote, Paseo requires reinstallation to approve the new source. Coordinate retirement of the legacy record with the registry maintainers.
+
+The personal `PASEO_REGISTRY_TOKEN` Actions secret was removed before the transfer. Automatic registry submissions are not enabled on the published branch. A separately authorized corporate credential and the pending submission workflow must be configured before enabling that automation. GitHub release creation still uses the repository's default `GITHUB_TOKEN`.
